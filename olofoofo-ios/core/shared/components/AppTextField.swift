@@ -1,18 +1,38 @@
-//
-//  AppTextField.swift
-//  olofoofo-ios
-//
-//  Created by Macbook on 05/12/2024.
-//
-
 import SwiftUI
 
 struct AppTextField: View {
+    var title: String
+    @Binding var text: String
+    var isSecure: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading) {
+            Text(title)
+                .font(.subheadline)
+                .fontWeight(.semibold)
+                .padding(.bottom, 10)
+            
+            if isSecure {
+                SecureField(title, text: $text)
+                    .padding()
+                    .background(Color.gray.opacity(0.1))
+                    .cornerRadius(8)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color.primary, lineWidth: 1)
+                    )
+            } else {
+                TextField(title, text: $text)
+                    .padding()
+                    .background(Color.gray.opacity(0.1))
+                    .cornerRadius(8)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color.primary, lineWidth: 1)
+                    )
+            }
+        }
+        .padding(.bottom, 20)
     }
 }
 
-#Preview {
-    AppTextField()
-}

@@ -2,7 +2,8 @@ import SwiftUI
 
 struct OnBoardingView: View {
     @State private var currentTab = 0
-    @State private var navigateToLogin = false // State variable to control navigation
+    @State private var navigateToLogin = false
+    // State variable to control navigation
     
     var body: some View {
         ZStack {
@@ -21,7 +22,7 @@ struct OnBoardingView: View {
             
             // LoginScreen - Shows only if navigateToLogin is true
             if navigateToLogin {
-                LoginScreen()
+                LoginView()
                     .transition(.move(edge: .trailing)) // Transition for smooth animation
                     .zIndex(1) // Ensures LoginScreen appears on top
             }
