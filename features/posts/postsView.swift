@@ -8,8 +8,22 @@
 import SwiftUI
 
 struct postsView: View {
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
-        Text("posts")
+        NavigationView{
+            Text("posts")
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Image("logo")
+                            .renderingMode(.template)
+                               .resizable()
+                               .scaledToFit()
+                               .foregroundColor(colorScheme == .dark ? .white : .black)
+                               .frame(height: 40)
+                    }
+                }
+                .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
 

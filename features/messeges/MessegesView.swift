@@ -9,7 +9,10 @@ import SwiftUI
 
 struct MessegesView: View {
     var body: some View {
-        Text("messeges")
+        NavigationView{
+            Text("Messages")
+                .navigationTitle("Messages")
+        }
     }
 }
 

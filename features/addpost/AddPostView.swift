@@ -9,7 +9,11 @@ import SwiftUI
 
 struct AddPostView: View {
     var body: some View {
-        Text("addPost")
+        NavigationView{
+            Text("add posts")
+                
+                .navigationTitle("Add post")
+        }
     }
 }
 

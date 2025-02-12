@@ -60,6 +60,7 @@ struct SignUpView: View {
                             }) {
                                 Text("Sign In")
                                     .font(.footnote)
+                                    .foregroundColor(.primary)
                                     .fontWeight(.bold)
                             }
                         }
@@ -78,5 +79,11 @@ struct SignUpView: View {
             }
             .animation(.easeInOut, value: navigateToHome)
         }
+    }
+}
+
+struct SignUpView_Previews: PreviewProvider {
+    static var previews: some View {
+        SignUpView()
     }
 }
