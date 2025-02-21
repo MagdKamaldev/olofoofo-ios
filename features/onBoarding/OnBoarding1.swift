@@ -2,19 +2,17 @@ import SwiftUI
 
 struct OnBoarding1View: View {
     @Binding var currentTab: Int
-    @Binding var navigateToLogin: Bool // Binding to control navigation
-    
+    @Binding var navigateToLogin: Bool
+
     var body: some View {
         ZStack {
-               
             VStack {
                 Image("OnBoarding1")
-                                   .resizable()
-                                   .scaledToFit()
-                                   .frame(width: 200, height: 200)
-                                   .clipped()
-                                   .padding(50)
-                
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 200, height: 200)
+                    .clipped()
+                    .padding(50)
                 Text("Connect with Friends and Family")
                     .font(.title)
                     .foregroundColor(.primary)
@@ -30,9 +28,8 @@ struct OnBoarding1View: View {
                 } label: {
                     AppButton(title: "Next", isWhite: false)
                 }.padding(.bottom, 10)
-                
                 Button {
-                    navigateToLogin = true // Skip and go to LoginScreen (like pushReplacement)
+                    navigateToLogin = true
                 } label: {
                     AppButton(title: "Skip", isWhite: true)
                 }

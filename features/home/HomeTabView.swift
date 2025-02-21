@@ -5,13 +5,13 @@ struct HomeTabView: View {
         TabView {
             postsView()
                 .tabItem {
-                    Image(systemName: "house.fill") // Represents Home
+                    Image(systemName: "house.fill")
                     Text("Home")
                 }
             
             NotificationsView()
                 .tabItem {
-                    Image(systemName: "bell.fill") // Represents Notifications
+                    Image(systemName: "bell.fill")
                     Text("Notifications")
                 }
             

@@ -9,11 +9,10 @@ import SwiftUI
 
 @main
 struct olofoofo_iosApp: App {
-    @AppStorage("userToken") private var userToken: String = ""
-    
+    @State private var userToken = TokenManager.shared.token
     var body: some Scene {
         WindowGroup {
-            if userToken.isEmpty {
+            if userToken == nil {
                 OnBoardingView()
             } else {
                 HomeTabView()
